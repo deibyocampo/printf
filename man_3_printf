@@ -6,12 +6,12 @@ _printf \- Function that print characters
 .SH SYNOPSIS
 _printf FORMAT [ARGUMENT]...
 .SH DESCRIPTION
-is a function that prints the type of data that is within the variable this is used in programming language c.
+Is a function that prints the type of data that is within the variable this is used in programming language C.
 .SH OPTION
 prints any type of data such as %c, %s, %d, %i, %.
 .SH SEE ALSO
 in the repository is the example of how to print data types.
 .SH BUGS
-may try to print characters that are not string or integers.
+May try to print characters that are not string or integer in the format.
 .SH AUTHOR
-jose calderon & deiby ocampo (github.com/deibyocampo/printf/tree/develop).
+Jose Calderon & Deiby Ocampo (github.com/deibyocampo/printf/tree/develop).
