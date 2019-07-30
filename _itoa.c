@@ -9,14 +9,16 @@
  */
 int _itoa(int n)
 {
-	int sh;
-	int l = 0, i = 0, j = 0, c = 0, k = 0;
+	int sh, l = 0, i = 0, j = 0, c = 0, tl;
+	char *s;
 
 	l = (n < 0) ? (_cdigits(n) + 1) : _cdigits(n);
-	char s[(l + 1)];
-
-	k = sh = n;
-	if (k < 0)
+	tl = l + 1;
+	s = (char *)malloc(sizeof(char) * tl);
+	if (s == NULL)
+		return (0);
+	sh = n;
+	if (n < 0)
 		n = -n;
 	i = 0;
 	do {
@@ -37,5 +39,6 @@ int _itoa(int n)
 	}
 	for (i = 0; i < (l + 1); i++)
 		_putchar(s[i]);
+	free(s);
 	return ((l + 1));
 }
