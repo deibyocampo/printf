@@ -6,5 +6,5 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _cdigits(int n);
-char *_itoa(int i, char s[]);
+int _itoa(int n);
 #endif
