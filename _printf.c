@@ -15,17 +15,14 @@ int _printf(const char *format, ...)
 {
 	va_list vl;
 	unsigned int i = 0, j = 0, k = 0;
-	char t;
-	char *s;
+	char t, *s;
 
 	va_start(vl, format);
 	while (format[i] != '\0')
 	{
 		t = format[i];
 		if (t == '%' && format[i + 1] == '%')
-		{
 			i++;
-		}
 		if (t == '%' && format[i + 1] == 'c')
 		{
 			t = (char)va_arg(vl, int);
@@ -45,16 +42,9 @@ int _printf(const char *format, ...)
 			i = i + 2;
 			continue;
 		}
-		if (t == '%' && format[i + 1] == 'd')
+		if (t == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
 		{
-			k += _itoa(va_arg(vl, int));
-			i = i + 2;
-			continue;
-		}
-		if (t == '%' && format[i + 1] == 'i')
-		{
-			k += _itoa(va_arg(vl, int));
-			i = i + 2;
+			printnumber(&k, vl, &i);
 			continue;
 		}
 		_putchar(t);
@@ -63,4 +53,19 @@ int _printf(const char *format, ...)
 	}
 	va_end(vl);
 	return (k);
+}
+
+/**
+ * printnumber - Function to print a number.
+ * @k: The reference to the characters counter
+ * @vl: The number to print
+ * @i: The reference to the indexes.
+ *
+ * Author: José Calderón
+ * Return: void
+ */
+void printnumber(unsigned int *k, va_list vl, unsigned int *i)
+{
+	*k += _itoa(va_arg(vl, int));
+	*i = *i + 2;
 }
