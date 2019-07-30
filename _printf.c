@@ -15,14 +15,9 @@ int _printf(const char *format, ...)
 {
 	va_list vl;
 	unsigned int i = 0, j = 0, k = 0;
-	/*
-	int l;
-	*/
 	char t;
 	char *s;
-	/*
-	char digits[1];
-	*/
+
 	va_start(vl, format);
 	while (format[i] != '\0')
 	{
@@ -50,30 +45,18 @@ int _printf(const char *format, ...)
 			i = i + 2;
 			continue;
 		}
-		/*
-		  MUST BE TESTED
-		  PENDING THE ITOA VERIFICATION
 		if (t == '%' && format[i + 1] == 'd')
 		{
-			l = 0;
-			l = _cdigits(va_arg(vl, int));
-			if (va_arg(vl, int) < 0)
-			{
-				l = l + 1;
-			}
-			s = "";
-			s = _itoa((l + 1), va_arg(vl, int)x);
-		        j = 0;
-			while (s[j] != '\0')
-			{
-				_putchar(s[j]);
-				k++;
-				j++;
-			}
+			k += _itoa(va_arg(vl, int));
 			i = i + 2;
 			continue;
 		}
-		*/
+		if (t == '%' && format[i + 1] == 'i')
+		{
+			k += _itoa(va_arg(vl, int));
+			i = i + 2;
+			continue;
+		}
 		_putchar(t);
 		i++;
 		k++;
