@@ -1,0 +1,17 @@
+.\" Manpage for _printf
+.\" Contact github.com/deibyocampo/printf/tree/master to correct errors to typos.
+.TH man 8 "29 Jul 2019" "0.0" "_printf man page"
+.SH NAME
+_printf \- Function that print characters
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+Is a function that prints the type of data that is within the variable this is used in programming language C.
+.SH OPTION
+prints any type of data such as %c, %s, %d, %i, %.
+.SH SEE ALSO
+in the repository is the example of how to print data types.
+.SH BUGS
+May try to print characters that are not string or integer in the format.
+.SH AUTHOR
+Jose Calderon & Deiby Ocampo (github.com/deibyocampo/printf/tree/develop).
