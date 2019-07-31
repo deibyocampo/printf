@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				k++;
 				j++;
 			}
-			i = i + 2;
+			i += 2;
 			continue;
 		}
 		if (t == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
