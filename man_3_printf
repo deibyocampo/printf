@@ -10,7 +10,7 @@ Is a function that prints the type of data that is within the variable this is u
 .SH OPTION
 Prints any type of data such as %c, %s, %d, %i, %.
 .SH SEE ALSO
-in the repository is the example of how to print data types.
+in the repository the github is the example of how to print data types.
 .SH BUGS
 May try to print characters that are not string or integer in the format.
 .SH AUTHOR
