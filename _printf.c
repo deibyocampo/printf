@@ -67,5 +67,5 @@ int _printf(const char *format, ...)
 void printnumber(unsigned int *k, va_list vl, unsigned int *i)
 {
 	*k += _itoa(va_arg(vl, int));
-	*i = *i + 2;
+	*i  += 2;
 }
