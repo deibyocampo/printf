@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 		}
 		if (t == '%' && format[i + 1] == 's')
 		{
-			s = "";
 			s = va_arg(vl, char*);
 			j = 0;
 			while (s[j] != '\0')
