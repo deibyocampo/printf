@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
  * @vl: The number to print
  * @i: The reference to the indexes.
  *
- * Author: José Calderón
+ * Author: José Calderón, deiby ocampo.
  * Return: void
  */
 void printnumber(unsigned int *k, va_list vl, unsigned int *i)
