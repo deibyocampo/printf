@@ -24,6 +24,16 @@ printf function, basically you need to put a text first with the format:
 | i | Integer |
 | % | Define the specific format |
 
+The options are also called “flags” and among themselves they can appear in any order. Here is a partial
+list.
+
+| flag | effect                         |
+|------|--------------------------------|
+|   -  | left justify                   |
+|   0  | leading zero fill              |
+|   +  | print plus on positive numbers |
+
+
 Later you need to put the elements that correspond to the format given:
 
 ### Example of use
