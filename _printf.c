@@ -4,7 +4,7 @@
 /**
  * _printf - Function to print anything elements given
  * as a parameters.
- * @format: The text with the format (c, i, f, s)
+ * @format: The text with the format (c, s, d, i)
  *
  * Author: José Calderón
  * Description: A function to print various elements from
@@ -14,58 +14,42 @@
 int _printf(const char *format, ...)
 {
 	va_list vl;
-	unsigned int i = 0, j = 0, k = 0;
-	char t, *s;
+	op_list ol[] = {
+		{'c', _pchar},
+		{'s', _pstring},
+		{'d', _pnumber}
+	};
+	unsigned int i = 0, k = 0;
+	char t;
 
 	va_start(vl, format);
-	while (format[i] != '\0')
+	if (vl == NULL)
+		return (0);
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		t = format[i];
 		if (t == '%' && format[i + 1] == '%')
 			i++;
 		if (t == '%' && format[i + 1] == 'c')
 		{
-			t = (char)va_arg(vl, int);
+			k += ol[0].f(vl);
 			i++;
+			continue;
 		}
 		if (t == '%' && format[i + 1] == 's')
 		{
-			s = "";
-			s = va_arg(vl, char*);
-			j = 0;
-			while (s[j] != '\0')
-			{
-				_putchar(s[j]);
-				k++;
-				j++;
-			}
-			i = i + 2;
+			k += ol[1].f(vl);
+			i++;
 			continue;
 		}
 		if (t == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
 		{
-			printnumber(&k, vl, &i);
+			k += ol[2].f(vl);
+			i++;
 			continue;
 		}
-		_putchar(t);
-		i++;
-		k++;
+		k += _putchar(t);
 	}
 	va_end(vl);
 	return (k);
-}
-
-/**
- * printnumber - Function to print a number.
- * @k: The reference to the characters counter
- * @vl: The number to print
- * @i: The reference to the indexes.
- *
- * Author: José Calderón
- * Return: void
- */
-void printnumber(unsigned int *k, va_list vl, unsigned int *i)
-{
-	*k += _itoa(va_arg(vl, int));
-	*i = *i + 2;
 }
