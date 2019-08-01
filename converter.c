@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
- * converternum - gets a number integer to convert in binary.
+ * converter_num - gets a number integer to convert in binary.
  *
  * @num: data type long integer.
  * @base: the number division and modulate that converter binary.
  * 
  * Return: result to binary.
  */
-int converternum(unsigned long int num, unsigned int base)
+int converter_num(unsigned long int num, unsigned int base)
 {
 	unsigned long int temp;
 	int i;
