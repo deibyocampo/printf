@@ -8,4 +8,6 @@ int _putchar(char c);
 int _cdigits(int n);
 int _itoa(int n);
 void printnumber(unsigned int *k, va_list vl, unsigned int *i);
+int binary_print(va_list vl);
+int converter_num(unsigned long num, unsigned int base);
 #endif
