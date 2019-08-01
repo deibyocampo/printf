@@ -1,9 +1,11 @@
 #include "holberton.h"
 /**
+ * binaryconv - receives the numbers to argument
+ * that converter in binary.
  *
+ * @vl: list arguments.
  *
- *
- *
+ * Return: number to binary.
  */
 int binaryconv(va_list, argum);
 {
