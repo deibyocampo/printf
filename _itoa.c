@@ -40,5 +40,5 @@ int _itoa(int n)
 	for (i = 0; i < (l + 1); i++)
 		_putchar(s[i]);
 	free(s);
-	return ((l + 1));
+	return (i - 1);
 }
