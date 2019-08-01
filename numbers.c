@@ -1,18 +1,18 @@
 #include "holberton.h"
 /**
- * binaryconv - receives the numbers to argument
+ * binary_print - receives the numbers to argument
  * that converter in binary.
  *
  * @vl: list arguments.
  *
  * Return: number to binary.
  */
-int binaryconv(va_list, argum);
+int binary_print(va_list, vl);
 {
 	unsigned int num;
 	int bin;
 
-	num = va_arg(argum, unsigned int);
+	num = va_arg(vl, unsigned int);
 	bin = converternum(num, 2);
 
 	return(bin);
