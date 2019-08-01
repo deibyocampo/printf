@@ -11,7 +11,7 @@ int _cdigits(int n)
 
 	while (n != 0)
 	{
-		n = n / 10;
+		n /= 10;
 		t++;
 	}
 	return (t);

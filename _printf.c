@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 		}
 		if (t == '%' && format[i + 1] == 's')
 		{
-			s = "";
 			s = va_arg(vl, char*);
 			j = 0;
 			while (s[j] != '\0')
@@ -39,7 +38,7 @@ int _printf(const char *format, ...)
 				k++;
 				j++;
 			}
-			i = i + 2;
+			i += 2;
 			continue;
 		}
 		if (t == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
@@ -61,11 +60,11 @@ int _printf(const char *format, ...)
  * @vl: The number to print
  * @i: The reference to the indexes.
  *
- * Author: José Calderón
+ * Author: José Calderón, deiby ocampo.
  * Return: void
  */
 void printnumber(unsigned int *k, va_list vl, unsigned int *i)
 {
 	*k += _itoa(va_arg(vl, int));
-	*i = *i + 2;
+	*i  += 2;
 }
